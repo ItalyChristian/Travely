@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+body{ 
+  background: rgb(4,5,6);
+  background: linear-gradient(90deg, rgba(4,5,6,1) 0% rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%);
+}
