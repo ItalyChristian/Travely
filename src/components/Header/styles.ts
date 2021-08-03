@@ -1,62 +1,112 @@
 import styled from 'styled-components';
 
-export const NavBar = styled.nav`
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-
-  line-height: inherit;
-  padding: 50px;
+export const NavBar = styled.div`
+  width: 100%;
+  height: 3rem;
   
-  height: 25px;
-  max-width: 1000px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+`;
+
+export const LogoContainer = styled.div`
+  width: 33.3%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
 `;
 
 export const Logo = styled.h1`
-  float: left;
-  margin-left: -20rem;
-
-  color: #ff5f5f;
+  color: #de3163;
   font-size: 3.5rem;
 `;
 
-export const Item = styled.li`
-  list-style: none;
-  
-  display: inline-block;
+export const NavItemsContainer = styled.div`
+  width: 33.3%;
 
-  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  list-style: none;
+
+  gap: 1rem;
 
   font-size: 1rem;
+  color: #FFF;
+`;
+
+export const Item = styled.div`
+  text-decoration: none;
+  list-style: none;
+
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFF;
+
+  :hover {
+    color: #de3163;
+  }
+  
 `; 
 
-export const NavItems = styled.ul`
 
-  &, ${Item} {
-    list-style: none;
-  
-    display: inline-block;
+export const Rounded = styled.div`
+  width: 5px;
+  height: 5px;
 
-    padding: 15px;
+  background-color: #de3163;
 
-    font-size: 1rem;
-  }
+  border-radius: 50px;
 
+`;
 
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #FFF;
-  }
+export const IconsContainer = styled.div`
+  width: 33.3%;
 
-  a:hover {
-    color: #ff5f5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+    
+
+  svg{
+    fill: #FFF;
   }
 `;
 
-export const Rounded = styled.div`
-    border-radius: 350px;
-    border: 3px solid #ff5f5f;
+export const SearchContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  svg {
+    cursor: pointer;
+
+    transition: 0.15s ease;
+
+    border-radius: 50%;
+    
+    padding: 0.25rem;
+
+    :hover {
+      background-color: gray;
+    }
+  }
+`;
+
+export const SearchInput = styled.input<{ isActive: boolean }>`
+  width: ${({ isActive }) => isActive ? '30%' : 0};
+
+  border: none;
+
+  outline: 0;
+
+  transition: 0.15s ease; 
 `;

@@ -1,31 +1,50 @@
-import { Link } from 'react-router-dom';
-
 import * as S from './styles';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineUser } from 'react-icons/ai';
+import { useState } from 'react';
 
 const Header = () => {
-    return (
-        <S.NavBar className='navbar'>
-            <S.Logo>Travely.</S.Logo>
+    const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
-            <S.NavItems>
-                <S.Item><Link to="/">Home</Link></S.Item>
+    return (
+        <S.NavBar>
+
+            <S.LogoContainer>
+                <S.Logo>Travely.</S.Logo>
+            </S.LogoContainer>
             
-                <S.Item><div className="rounded"></div></S.Item>
+
+            <S.NavItemsContainer>
+                <S.Item>Home</S.Item>
             
-                <S.Item><Link to="/">Features</Link></S.Item>
+                <S.Item><S.Rounded></S.Rounded></S.Item>
             
-                <S.Item><div className="rounded"></div></S.Item>
+                <S.Item>Features</S.Item>
             
-                <S.Item><Link to="/">Destinations</Link></S.Item>
+                <S.Item><S.Rounded></S.Rounded></S.Item>
             
-                <S.Item><div className="rounded"></div></S.Item>
+                <S.Item>Destinations</S.Item>
             
-                <S.Item><Link to="/">Tours</Link></S.Item>
+                <S.Item><S.Rounded></S.Rounded></S.Item>
             
-                <S.Item><div className="rounded"></div></S.Item>
+                <S.Item> Tours </S.Item>
             
-                <S.Item><Link to="/">Contact</Link></S.Item>
-            </S.NavItems>
+                <S.Item><S.Rounded></S.Rounded></S.Item>
+            
+                <S.Item>Contact</S.Item>
+            </S.NavItemsContainer>
+
+            <S.IconsContainer>
+                <S.SearchContainer>
+                    <S.SearchInput isActive={isSearchActive} placeholder="Search..."></S.SearchInput>
+                    <AiOutlineSearch onClick={() => {
+                        isSearchActive ? setIsSearchActive(false) : setIsSearchActive(true)
+                    }}
+                    />
+                <AiOutlineUser />
+                </S.SearchContainer>
+            </S.IconsContainer>
+
         </S.NavBar> 
     
     )

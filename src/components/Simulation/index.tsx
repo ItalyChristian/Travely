@@ -1,26 +1,26 @@
 import { AiOutlineSearch } from 'react-icons/ai';
 import * as S from './styles';
+import Container from '../SecondContainer'
 
 const Simulation = () => {
     return (
-        <S.Container>
-            <S.ListItems>
-                <S.Item>
-                    <select>Select location</select>
-                </S.Item>
-                <S.Item>
-                    <select>Tour type</select>
-                </S.Item>
-                <S.Item>
-                    <select>Select month</select>
-                </S.Item>
-                <S.Item>
-                    <input type="number" placeholder="Member"></input>
-                </S.Item>
-                <S.Item><AiOutlineSearch /></S.Item>
-            </S.ListItems>
-        </S.Container>
+        <Container>
+            <S.ContainerItems>
+                <S.ListItems>
+                    <S.Item><S.Select>Select location</S.Select></S.Item>
+
+                    <S.Item><S.Select>Tour type</S.Select></S.Item>
+
+                    <S.Item><S.Select>Select month</S.Select></S.Item>
+
+                    <S.Item><S.MembersQuantity type="number" placeholder="Member"></S.MembersQuantity></S.Item>
+
+                    <S.Item><S.Icon><AiOutlineSearch /></S.Icon></S.Item> 
+                </S.ListItems>
+            </S.ContainerItems>
+        </Container>
     )
 }
 
 export default Simulation;
+

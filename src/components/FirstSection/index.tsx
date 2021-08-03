@@ -1,13 +1,13 @@
 import Header from '../Header';
 import Apresentation from '../Apresentation';
-import * as S from './styles';
+import Container from '../FirstContainer'
 
 const FirstSection = () => {
     return (
-        <S.Container>
+        <Container>
             <Header />
             <Apresentation />
-        </S.Container>
+        </Container>
     )
 }
 
