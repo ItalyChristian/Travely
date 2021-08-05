@@ -47,6 +47,8 @@ export const Item = styled.div`
   text-decoration: none;
   list-style: none;
 
+  margin-top: 30px;
+
   font-weight: bold;
   font-size: 1rem;
   color: #FFF;
@@ -75,7 +77,7 @@ export const IconsContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-    
+  margin-top: 30px;
 
   svg{
     fill: #FFF;
