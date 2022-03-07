@@ -1,114 +1,75 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
-export const NavBar = styled.div`
-  width: 100%;
-  height: 3rem;
-  
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 1rem;
+export const Placeholder = styled.div`
+  background-color: var(--grey);
 `;
 
-export const LogoContainer = styled.div`
-  width: 33.3%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: auto;
-`;
-
-export const Logo = styled.h1`
-  color: #de3163;
-  font-size: 3.5rem;
-`;
-
-export const NavItemsContainer = styled.div`
-  width: 33.3%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-  list-style: none;
-
-  gap: 1rem;
-
-  font-size: 1rem;
-  color: #FFF;
-`;
-
-export const Item = styled.div`
-  text-decoration: none;
-  list-style: none;
-
-  margin-top: 30px;
-
-  font-weight: bold;
-  font-size: 1rem;
-  color: #FFF;
-
-  :hover {
-    color: #de3163;
-  }
-  
-`; 
-
-
-export const Rounded = styled.div`
-  width: 5px;
-  height: 5px;
-
-  background-color: #de3163;
-
-  border-radius: 50px;
-
-`;
-
-export const IconsContainer = styled.div`
-  width: 33.3%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 30px;
-
-  svg{
-    fill: #FFF;
-  }
-`;
-
-export const SearchContainer = styled.div`
-  display: flex;
-  gap: 1rem;
-
-  svg {
-    cursor: pointer;
-
-    transition: 0.15s ease;
-
-    border-radius: 50%;
-    
-    padding: 0.25rem;
-
-    :hover {
-      background-color: gray;
+export const Container = styled.div<{ isActive: boolean }>`
+  @keyframes animationForwardNav {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(0px);
     }
   }
+
+  @keyframes animationBackwardNav {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  width: 100%;
+  height: 8rem;
+
+  display: flex;
+  justify-content: space-between;
+  position: ${({ isActive }) => isActive ?  'fixed' : 'absolute'};
+
+  padding: 0 15%;
+
+  background-color: ${({ isActive }) => isActive ?  'var(--grey)' : 'transparent'};
+
+  border-radius: ${({ isActive }) => isActive ? '0 0 3rem 3rem' : '0'};
+  box-shadow: ${({ isActive }) => isActive ?  '0px 0px 30px 15px var(--dark-grey)' : 'unset'};
+
+  animation: ${({ isActive }) => isActive ? 'animationForwardNav 1s' : 'animationBackwardNav 1s'};
+  animation-fill-mode: ${({ isActive }) => isActive ? 'forwards' : 'none'};
+  transition: 1s;
+
+  z-index: 10;
+
+  @media (max-width: 1440px) {
+    padding: 0 10%;
+  }
 `;
 
-export const SearchInput = styled.input<{ isActive: boolean }>`
-  width: ${({ isActive }) => isActive ? '30%' : 0};
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  border: none;
+  background: transparent;
 
-  outline: 0;
+  @media (max-width: 767px) {
+    min-width: 3.8rem;
+    max-width: 3.8rem;
+  }
+`;
 
-  transition: 0.15s ease; 
+export const Logo = styled.img`
+  width: 100%;
+  max-width:  10rem;
+
+  cursor: pointer;
+
+  background: transparent;
+
+  /* @media (max-width: 767px) {
+    height: 8rem;
+  } */
 `;

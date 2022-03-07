@@ -1,13 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: "Roboto";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+p, span {
+  font-weight: 300;
+}
+
+button { 
+  cursor: pointer;
+}
 
 * {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
   margin: 0;
-  font-family: "Quicksand";
-  color: #333;
+  font-family: "Share Tech";
+  font-weight: 400;
 }
 
-body{ 
-  background: rgb(4,5,6);
-  background: linear-gradient(90deg, rgba(4,5,6,1) 0% rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%);
-}
+:root {
+  --light-grey: #3d3d3d;
+  --grey: #313131;
+  --dark-grey: #272727;
+  
+  --white: #ffffff;
 
+  --blue: #60a2ee;
+  --blue1: #60A8F4;
+  --blue2: #5695F3;
+  --blue3: #416DF1;
+  --blue4: #3659F0;
+}

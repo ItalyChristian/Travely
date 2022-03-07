@@ -1,53 +1,81 @@
+import Head from 'next/head'
+
+import React, { useCallback, useState, useEffect } from 'react';
+
+import Link from 'next/link';
+
+import desktopLogo from "assets/images/favicon-16x16.png";
+import mobileLogo from "assets/images/favicon-16x16.png";
+
 import * as S from './styles';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { AiOutlineUser } from 'react-icons/ai';
-import { useState } from 'react';
 
-const Header = () => {
-    const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
+import DesktopNav from './components/DesktopNav';
+import MobileNav from './components/MobileNav';
 
-    return (
-        <S.NavBar>
+const Header: React.FC = () => {
+  const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
+  const [isHamburgerClicked, setIsHamburgerClicked] = useState<boolean>(false);
 
-            <S.LogoContainer>
-                <S.Logo>Travely.</S.Logo>
-            </S.LogoContainer>
-            
+  const useWindowWidth = () => {
+    const [windowWidth, setWindoWidth] = useState<undefined | number>(
+      undefined
+    );
 
-            <S.NavItemsContainer>
-                <S.Item>Home</S.Item>
-            
-                <S.Item><S.Rounded></S.Rounded></S.Item>
-            
-                <S.Item>Features</S.Item>
-            
-                <S.Item><S.Rounded></S.Rounded></S.Item>
-            
-                <S.Item>Destinations</S.Item>
-            
-                <S.Item><S.Rounded></S.Rounded></S.Item>
-            
-                <S.Item> Tours </S.Item>
-            
-                <S.Item><S.Rounded></S.Rounded></S.Item>
-            
-                <S.Item>Contact</S.Item>
-            </S.NavItemsContainer>
+    useEffect(() => {
+      function handleResize() {
+        setWindoWidth(window.innerWidth);
+      }
 
-            <S.IconsContainer>
-                <S.SearchContainer>
-                    <S.SearchInput isActive={isSearchActive} placeholder="Search..."></S.SearchInput>
-                    <AiOutlineSearch onClick={() => {
-                        isSearchActive ? setIsSearchActive(false) : setIsSearchActive(true)
-                    }}
-                    />
-                <AiOutlineUser />
-                </S.SearchContainer>
-            </S.IconsContainer>
+      window.addEventListener('resize', handleResize);
 
-        </S.NavBar> 
-    
-    )
+      handleResize();
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, [windowWidth]);
+
+    return windowWidth;
+  };
+
+  const currentWidth = useWindowWidth();
+
+  const currentLogo = currentWidth && currentWidth >= 768 ? desktopLogo : mobileLogo;
+
+  const changeNavBarStyle = useCallback(() => {
+    let currentScrollHeight = document.documentElement.scrollTop;
+
+    if (currentScrollHeight > 0) return setIsMenuActive(true);
+
+    setIsMenuActive(false);
+  }, [setIsMenuActive]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavBarStyle);
+  }, [changeNavBarStyle]);
+
+  return (
+    <>
+      <S.Container isActive={isMenuActive}>
+        <S.ImageWrapper>
+          <Link href="/">
+            <S.Logo src={currentLogo.src} alt="Logotipo da Leadsoft soluções web" title="Navegar até a home | LeadSoft® Soluções Web"></S.Logo>
+          </Link>
+        </S.ImageWrapper>
+
+        {currentWidth && currentWidth > 768 ? (
+          <DesktopNav />
+        ) : (
+          <MobileNav
+            isHamburgerClicked={isHamburgerClicked}
+            setIsHamburgerClicked={setIsHamburgerClicked}
+          />
+        )}
+      </S.Container>
+
+      <S.Placeholder />
+    </>
+  )
 }
 
 export default Header;
