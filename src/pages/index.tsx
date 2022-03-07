@@ -1,9 +1,7 @@
 import { Fragment } from 'react'
 
-import * as S from 'styles';
 import Head from 'next/head'
 import MainSlider from 'components/Slider';
-
 const Home = () => {
   return (
     <Fragment>

@@ -9,8 +9,6 @@ import Document, {
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-import Icon from 'assets/images/favicon-16x16.png';
-
 class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext
@@ -46,7 +44,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Share+Tech&display=swap" rel="stylesheet" />  
-          <link rel="shortcut icon" href="Icon" />
+          <link rel="shortcut icon" href="/icone-logo.ico" />
         </Head>
 
         <body>

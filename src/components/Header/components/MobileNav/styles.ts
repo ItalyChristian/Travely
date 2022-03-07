@@ -1,32 +1,31 @@
 import styled from 'styled-components';
 
 export const HamburgerNav = styled.nav`
+  width: 100%;
+
   position: relative;
 
   margin: 0;
-
-  width: 100%;
 `;
 
 export const HamburgerUl = styled.ul<{ isClicked: boolean }>`
-  position: fixed;
-  right: 0;
-
-  background: var(--grey);
-
-  height: 100vh;
   width: clamp(50%, 45rem, 100%);
+  height: 100vh;
 
   flex-direction: column;
 
-  clip-path: ${({ isClicked }) => isClicked ? 'circle(2200px at 90% -20%)' : 'circle(100px at 90% -20%)'};
-  -webkit-clip-path: ${({ isClicked }) => isClicked ? 'circle(2200px at 90% -20%)' : 'circle(100px at 90% -20%)'};
+  position: fixed;
+  right: 0;
 
-  transition: all 0.8s ease-out;
+  margin: 0;
+
+  background: var(--grey);
 
   list-style-type: none;
 
-  margin: 0;
+  clip-path: ${({ isClicked }) => isClicked ? 'circle(2200px at 90% -20%)' : 'circle(100px at 90% -20%)'};
+  -webkit-clip-path: ${({ isClicked }) => isClicked ? 'circle(2200px at 90% -20%)' : 'circle(100px at 90% -20%)'};
+  transition: all 0.8s ease-out;
 
   z-index: 99;
 
@@ -36,11 +35,10 @@ export const HamburgerUl = styled.ul<{ isClicked: boolean }>`
 `;
 
 export const HamburgerLinks = styled.li`
-  color: white;
-  
-  font-size: 4rem;
-
   margin-top: 6rem;
+
+  color: white;
+  font-size: 4rem;
 `;
 
 export const HamburgerLink = styled.a`
@@ -52,19 +50,18 @@ export const HamburgerLink = styled.a`
 `;
 
 export const HamburgerIcon = styled.button`
+  width: 10rem;
+  height: 10rem;
+
   position: absolute;
   right: 0;
 
   color: white;
-
-  background-color: transparent;
+  font-size: 4.5rem;
 
   border: none;
 
-  font-size: 4.5rem;
-
-  width: 10rem;
-  height: 10rem;
+  background-color: transparent;
 
   z-index: 100;
 `;

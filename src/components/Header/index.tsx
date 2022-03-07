@@ -1,13 +1,11 @@
-import Head from 'next/head'
-
 import React, { useCallback, useState, useEffect } from 'react';
 
 import Link from 'next/link';
 
+import * as S from './styles';
+
 import desktopLogo from "assets/images/favicon-16x16.png";
 import mobileLogo from "assets/images/favicon-16x16.png";
-
-import * as S from './styles';
 
 import DesktopNav from './components/DesktopNav';
 import MobileNav from './components/MobileNav';
@@ -59,7 +57,7 @@ const Header: React.FC = () => {
       <S.Container isActive={isMenuActive}>
         <S.ImageWrapper>
           <Link href="/">
-            <S.Logo src={currentLogo.src} alt="Logotipo da Leadsoft soluções web" title="Navegar até a home | LeadSoft® Soluções Web"></S.Logo>
+            <S.Logo src={currentLogo.src} alt="Logotipo da Travely" title="Navegar até a home | Travely"></S.Logo>
           </Link>
         </S.ImageWrapper>
 

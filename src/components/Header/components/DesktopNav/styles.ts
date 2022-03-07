@@ -12,7 +12,6 @@ export const NavBarUl = styled.ul`
   gap: clamp(6rem, 5.5vw, 10rem);
 
   font-size: clamp(1rem, 2vw, 2.5rem);
-
   color: var(--white);
 
   list-style-type: none;

@@ -1,13 +1,10 @@
-import React from 'react';
-
 import * as S from './styles';
 
-import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
-
 import Slider from 'react-slick';
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 
 import { sliderData } from './data';
 
@@ -21,8 +18,8 @@ const MainSlider: React.FC = () => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <S.IconRight title="Avançar slider"><RiArrowRightSLine /></S.IconRight>,
-    prevArrow: <S.IconLeft title="Voltar slider"><RiArrowLeftSLine /></S.IconLeft>
+    nextArrow: <S.IconRight title="Próximo item"><RiArrowRightSLine /></S.IconRight>,
+    prevArrow: <S.IconLeft title="Item anterior"><RiArrowLeftSLine /></S.IconLeft>
   };
 
   return (
@@ -37,7 +34,7 @@ const MainSlider: React.FC = () => {
             
             </S.TextWrapper>
 
-            <img src={image}  alt='Imagem de fundo do slider'/>
+            <S.BackgroundImage src={image}  alt="Imagem de fundo do slider"/>
           </S.BannerWrapper>
         ))}
       </Slider>

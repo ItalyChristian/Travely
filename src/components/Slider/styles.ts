@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+
   position: relative; 
 
   overflow: hidden;
@@ -18,14 +19,17 @@ export const BannerWrapper = styled.div`
   }
 `;
 
+export const BackgroundImage = styled.img``;
+
 export const TextWrapper = styled.div`
   width: 100%;
   height: 100vh;
 
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  position: absolute;
 `;
 
 export const BannerTitle = styled.h1`
@@ -71,7 +75,6 @@ export const IconLeft = styled.button`
   left: 2vw;
 
   font-size: 10rem;
-
   color: white !important;
 
   z-index: 5;
@@ -100,7 +103,6 @@ export const IconRight = styled.button`
   right: 7vw;
 
   font-size: 10rem;
-
   color: white !important;
 
   z-index: 5;

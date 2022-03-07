@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Link from 'next/link'
-
-import { GiHamburgerMenu } from 'react-icons/gi';
+import Link from 'next/link';
 
 import * as S from './styles';
+
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 interface MobileNav {
   isHamburgerClicked: boolean;
