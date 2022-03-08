@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 export const Placeholder = styled.div`
-  background-color: var(--grey);
+  background-color: var(--gun-powder);
 `;
 
 export const Container = styled.div<{ isActive: boolean }>`
@@ -32,10 +32,11 @@ export const Container = styled.div<{ isActive: boolean }>`
 
   padding: 0 15%;
 
-  background-color: ${({ isActive }) => isActive ?  'var(--grey)' : 'transparent'};
+  /* background-color: ${({ isActive }) => isActive ?  'var(--grey)' : 'transparent'}; */
+  background-color: transparent;
 
   border-radius: ${({ isActive }) => isActive ? '0 0 3rem 3rem' : '0'};
-  box-shadow: ${({ isActive }) => isActive ?  '0px 0px 30px 15px var(--dark-grey)' : 'unset'};
+  box-shadow: ${({ isActive }) => isActive ?  '0px 0px 30px 15px var(--gun-powder)' : 'unset'};
 
   animation: ${({ isActive }) => isActive ? 'animationForwardNav 1s' : 'animationBackwardNav 1s'};
   animation-fill-mode: ${({ isActive }) => isActive ? 'forwards' : 'none'};
@@ -61,9 +62,16 @@ export const ImageWrapper = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  color: white;
+  font-size: 2rem;
+`;
+
 export const Logo = styled.img`
   width: 100%;
   max-width:  10rem;
+  height: 100%;
+  height: 7rem;
 
   cursor: pointer;
 

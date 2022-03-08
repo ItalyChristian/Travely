@@ -11,15 +11,15 @@ export const NavBarUl = styled.ul`
   display: flex;
   gap: clamp(6rem, 5.5vw, 10rem);
 
-  font-size: clamp(1rem, 2vw, 2.5rem);
-  color: var(--white);
+  font-size: clamp(2rem, 100%, 5rem);
+  color: white;
 
   list-style-type: none;
 `;
 
 export const Links = styled.li`
   a:hover {
-    border-bottom: 0.2rem solid var(--blue);
+    border-bottom: 0.2rem solid var(--gun-powder);
   }
 `;
 

@@ -1,15 +1,22 @@
 import { Fragment } from 'react'
 
 import Head from 'next/head'
-import MainSlider from 'components/Slider';
+import MainSlider from 'components/MainSlider';
+import SearchFilters from 'components/SearchFilters';
+import OfferServices from 'components/OfferServices';
+import CardsSlider from 'components/CardsSlider';
+
 const Home = () => {
   return (
     <Fragment>
       <Head>
         <title>Travely</title>
-        <meta name="description" content="Desenvolvemos softwares sob medida para as necessidades da sua empresa." />
+        <meta name="description" content="Leave and Live Now!" />
       </Head>
       <MainSlider />
+      <SearchFilters />
+      <OfferServices />
+      <CardsSlider />
     </Fragment>
   )
 }

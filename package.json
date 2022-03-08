@@ -6,14 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "yarn plop --plopfile generators/plopfile.js"
   },
   "dependencies": {
     "3d-react-carousal": "^4.0.2",
     "@aws-sdk/client-ses": "^3.36.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@material-ui/core": "^5.0.0-beta.5",
+    "@material-ui/core": "^4.12.3",
     "@material-ui/styled-engine-sc": "^5.0.0-beta.5",
     "@material-ui/styles": "^4.11.4",
     "@types/aws-sdk": "^2.7.0",
@@ -24,8 +25,10 @@
     "aws-sdk": "^2.1003.0",
     "axios": "^0.22.0",
     "framer-motion": "^4.1.17",
+    "generate": "^0.14.0",
     "history": "^5.0.1",
     "next": "12",
+    "plop": "^3.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",

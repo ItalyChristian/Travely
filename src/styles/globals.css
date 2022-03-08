@@ -2,8 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
+
   font-size: 62.5%;
   font-family: "Roboto";
+
+  background-color: black;
 }
 
 a {
@@ -40,8 +43,11 @@ h6 {
   --light-grey: #3d3d3d;
   --grey: #313131;
   --dark-grey: #272727;
-  
-  --white: #ffffff;
+
+  --dark-gun-powder: #535358;
+  --gun-powder: #4A4A5E;
+  --manatee: #8B8B98;
+  --spun-pearl: #A2A2AD;
 
   --blue: #60a2ee;
   --blue1: #60A8F4;

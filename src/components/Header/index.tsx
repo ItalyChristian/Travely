@@ -56,6 +56,7 @@ const Header: React.FC = () => {
     <>
       <S.Container isActive={isMenuActive}>
         <S.ImageWrapper>
+          <S.Title>Travely.</S.Title>
           <Link href="/">
             <S.Logo src={currentLogo.src} alt="Logotipo da Travely" title="Navegar até a home | Travely"></S.Logo>
           </Link>
